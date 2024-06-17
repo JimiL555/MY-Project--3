@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Tracker</title>
+  <title>Employee Management</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Employee Tracker</h1>
-  
-  <button id="add-employees-btn">Add Employees</button>
-  
-  <div id="average-salary"></div>
-  <div id="random-employee"></div>
-  
-  <table id="employee-table">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Employee rows will be inserted here by JavaScript -->
-    </tbody>
-  </table>
-  
+  <header>
+    <h1>Employee Management</h1>
+  </header>
+
+  <main>
+    <button id="add-employees-btn">Add Employees</button>
+    <table id="employee-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
