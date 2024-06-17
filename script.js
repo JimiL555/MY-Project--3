@@ -1,8 +1,19 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+// Event listener for 'Add Employees' button
+addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
+// Function to handle adding employees
+function trackEmployeeData() {
+  const employeesArray = collectEmployees();
+  displayEmployees(employeesArray);
+  displayAverageSalary(employeesArray);
+  getRandomEmployee(employeesArray);
+}
+
 // Collect employee data
-const collectEmployees = function() {
+function collectEmployees() {
   const numEmployees = prompt("Enter the number of employees you want to add:");
   const employeesArray = [];
 
@@ -18,7 +29,7 @@ const collectEmployees = function() {
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+function displayAverageSalary(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
 
@@ -32,7 +43,7 @@ const displayAverageSalary = function(employeesArray) {
 }
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
+function getRandomEmployee(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
 
@@ -45,11 +56,8 @@ const getRandomEmployee = function(employeesArray) {
   document.querySelector('.card-body').appendChild(randomEmployeeText);
 }
 
-// Event listener for 'Add Employees' button
-addEmployeesBtn.addEventListener('click', trackEmployeeData);
-
-// Additional functionality to display employee data in an HTML table
-const displayEmployees = function(employeesArray) {
+// Display employees in the HTML table
+function displayEmployees(employeesArray) {
   const employeeTable = document.querySelector('#employee-table');
   employeeTable.innerHTML = '';
 
