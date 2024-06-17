@@ -7,7 +7,6 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
 }
 
 button {
@@ -20,7 +19,6 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 button:hover {
@@ -31,14 +29,12 @@ button:hover {
   text-align: center;
   margin: 10px 0;
   font-size: 18px;
-  color: #333;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -49,8 +45,6 @@ th, td {
 
 th {
   background-color: #f2f2f2;
-  font-weight: bold;
-  color: #333;
 }
 
 tr:nth-child(even) {
@@ -59,8 +53,4 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #f1f1f1;
-}
-
-td {
-  color: #555;
 }
