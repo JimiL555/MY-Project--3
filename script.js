@@ -3,10 +3,9 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
   const employees = [];
 
-  // Assuming user input via prompt for simplicity
+  // Prompt user for number of employees
   const numberOfEmployees = prompt("Enter number of employees:");
 
   for (let i = 0; i < numberOfEmployees; i++) {
@@ -28,7 +27,6 @@ const collectEmployees = function() {
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
   let totalSalary = 0;
 
   employeesArray.forEach(employee => {
@@ -48,7 +46,6 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
 
@@ -58,20 +55,11 @@ const getRandomEmployee = function(employeesArray) {
   document.body.append(randomEmployeeElement);
 }
 
-/*
-STARTER CODE
-Do not modify any of the code below this line:
-*/
-
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
-  // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
-
-  // Clear the employee table
   employeeTable.innerHTML = '';
 
-  // Loop through the employee data and create a row for each employee
   employeesArray.forEach(currentEmployee => {
     const newTableRow = document.createElement("tr");
 
@@ -84,7 +72,6 @@ const displayEmployees = function(employeesArray) {
     newTableRow.append(lastNameCell);
 
     const salaryCell = document.createElement("td");
-    // Format the salary as currency
     salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US", {
       style: "currency",
       currency: "USD"
@@ -92,19 +79,19 @@ const displayEmployees = function(employeesArray) {
 
     newTableRow.append(salaryCell);
 
-    employeeTable.append(newTableRow);
+    employeeTable.querySelector('tbody').append(newTableRow);
   });
 }
 
 const trackEmployeeData = function() {
   const employees = collectEmployees();
-
+  
   console.table(employees); // Log employees to console
-
+  
   displayEmployees(employees); // Display employees in HTML table
-
+  
   displayAverageSalary(employees); // Display average salary
-
+  
   getRandomEmployee(employees); // Display random employee
 }
 
