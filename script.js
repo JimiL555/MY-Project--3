@@ -1,4 +1,4 @@
-/ Get a reference to the #add-employees-btn element
+// Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
