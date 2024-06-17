@@ -1,131 +1,66 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-.wrapper {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
-}
-
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-header {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
   padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  background-color: #f4f4f4;
 }
 
-h2 {
+h1 {
   text-align: center;
+  color: #333;
 }
 
-.card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
-}
-
-.card-header::after {
-  content: " ";
+button {
   display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.card-body {
-  min-height: 100px;
+button:hover {
+  background-color: #45a049;
+}
+
+#average-salary, #random-employee {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
 }
 
 table {
-  width:100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-td{
-  text-align: center;
-  border:4px solid black;
-}
-
-tbody tr:nth-child(even) {
-  background-color: hsl(223, 64%, 90%);
-}
-
-.card-footer {
-  text-align: center;
-}
-
-.card-footer::before {
-  content: " ";
-  display: block;
   width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-.btn {
-  border: none;
-  background-color: hsl(223, 74%, 48%);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
   text-align: center;
-  cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
 }
 
-.float-right {
-  float: right;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-
-@media (max-width: 690px) {
-  .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-  }
+tr:hover {
+  background-color: #f1f1f1;
 }
 
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
+td {
+  color: #555;
 }
