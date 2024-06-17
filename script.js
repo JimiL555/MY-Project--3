@@ -40,7 +40,7 @@ const displayAverageSalary = function(employeesArray) {
 }
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) { 
+const getRandomEmployee = function(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
   
@@ -60,7 +60,6 @@ const getRandomEmployee = function(employeesArray) {
 
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
-
   // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
 
@@ -95,7 +94,6 @@ const displayEmployees = function(employeesArray) {
 }
 
 const trackEmployeeData = function() {
-  
   const employees = collectEmployees();
 
   console.table(employees);
@@ -105,5 +103,5 @@ const trackEmployeeData = function() {
   getRandomEmployee(employees);
 }
 
-// Add event listener to 'Add Employees' button
+// Add event listener to the button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
