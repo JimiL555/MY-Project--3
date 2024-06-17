@@ -1,4 +1,4 @@
-/ Get a reference to the #add-employees-btn element
+// Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Event listener for 'Add Employees' button
@@ -10,6 +10,67 @@ function trackEmployeeData() {
   displayEmployees(employeesArray);
   displayAverageSalary(employeesArray);
   getRandomEmployee(employeesArray);
+}
+// Function to collect employee data
+function collectEmployees() {
+  let employees = [];
+  let addMore = true;
+  
+  while (addMore) {
+      let firstName = prompt("Enter employee's first name:");
+      let lastName = prompt("Enter employee's last name:");
+      let salary = prompt("Enter employee's salary:");
+      
+      // Check if salary is a number, otherwise default to $0
+      if (isNaN(salary)) {
+          salary = 0;
+      }
+      
+      employees.push({
+          firstName: firstName,
+          lastName: lastName,
+          salary: parseInt(salary)
+      });
+      
+      addMore = confirm("Do you want to add another employee?");
+  }
+  
+  return employees;
+}
+
+// Function to display average salary
+function displayAverageSalary(employees) {
+  let totalSalary = 0;
+  
+  employees.forEach(employee => {
+      totalSalary += employee.salary;
+  });
+  
+  let averageSalary = totalSalary / employees.length;
+  
+  console.log(`Average Salary: $${averageSalary.toFixed(2)} for ${employees.length} employees`);
+}
+
+// Function to get random employee
+function getRandomEmployee(employees) {
+  let randomIndex = Math.floor(Math.random() * employees.length);
+  let randomEmployee = employees[randomIndex];
+  
+  console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+}
+```
+
+You can then call these functions in your `trackEmployeeData` function after sorting the employees by last name. For example:
+
+```javascript
+function trackEmployeeData() {
+  let employees = collectEmployees();
+  
+  employees.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  
+  displayEmployees(employees);
+  displayAverageSalary(employees);
+  getRandomEmployee(employees);
 }
 
 // Collect employee data
